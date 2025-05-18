@@ -101,6 +101,30 @@ body {
   align-items: center;
 }
 
+.quiz-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px; /* adds consistent spacing between timer and button */
+}
+
+#next-btn {
+  padding: 10px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #1982c4; 
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#next-btn:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
 #options-list {
   list-style: none;
   padding: 0;
@@ -149,3 +173,30 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
+
+.result-container {
+  max-width: 500px;
+  margin: 100px auto;
+  text-align: center;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.result-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #1982c4;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.result-buttons button:hover {
+  background-color: #105a82;
+}
+
