@@ -48,20 +48,30 @@ body {
 
 .card {
   background: white;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
   cursor: pointer;
+  transition: transform 0.2s;
+  max-width: 250px; /* card width */
+  margin: auto;
+  text-align: center;
 }
 
 .card:hover {
   transform: translateY(-5px);
 }
 
+
+
+
+
 .card img {
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: 180px;   /* fix height */
+  object-fit: cover;  /* image poori space cover kare */
+  border-radius: 1rem 1rem 0 0; /* sirf upar rounded */
+  display: block;
   margin-bottom: 1rem;
 }
 
@@ -78,4 +88,5 @@ body {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+  width: 100%;
 }
