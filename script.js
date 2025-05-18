@@ -15,6 +15,6 @@ title.split('').forEach((letter, i) => {
 });
 
 function startQuiz(topic) {
-  localStorage.setItem("topic", topic); 
-  window.location.href = "quiz.html";   
+  localStorage.setItem("topic", topic);
+  window.location.href = "quiz.html";
 }

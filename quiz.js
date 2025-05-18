@@ -4,7 +4,6 @@ let score = 0;
 let timer;
 let timeLeft = 10;
 const topic = localStorage.getItem("topic") || "html";
-
 const questionText = document.getElementById("question-text");
 const optionsList = document.getElementById("options-list");
 const nextBtn = document.getElementById("next-btn");
@@ -17,36 +16,32 @@ fetch(`questions/${topic}.json`)
     showQuestion();
   });
 
+function escapeHTML(str) {
+  return str.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 function showQuestion() {
   clearInterval(timer);
   timeLeft = 10;
   nextBtn.disabled = true;
-
   const q = questions[currentQuestion];
   questionText.textContent = `Q${currentQuestion + 1}. ${q.question}`;
   optionsList.innerHTML = "";
-
-q.options.forEach((option, index) => {
-  const li = document.createElement("li");
-  li.classList.add("option-item");
-
-  li.innerHTML = `
+  q.options.forEach((option, index) => {
+    const li = document.createElement("li");
+    li.classList.add("option-item");
+    li.innerHTML = `
     <label class="option-label">
       <input type="radio" name="option" value="${index}">
-      <span>${option}</span>
+      <span>${escapeHTML(option)}</span>
     </label>
   `;
-
-  const input = li.querySelector("input");
-  input.addEventListener("change", () => {
-    selectOption(li, index, q.answer);
+    const input = li.querySelector("input");
+    input.addEventListener("change", () => {
+      selectOption(li, index, q.answer);
+    });
+    optionsList.appendChild(li);
   });
-
-  optionsList.appendChild(li);
-});
-
-
-
 
   updateTimer();
   timer = setInterval(() => {
@@ -73,7 +68,6 @@ function selectOption(selectedLi, selectedIndex, correctIndex) {
   }
 }
 
-
 nextBtn.addEventListener("click", () => {
   clearInterval(timer);
   goToNextQuestion();
@@ -82,7 +76,6 @@ nextBtn.addEventListener("click", () => {
 function showResultOverlay() {
   const quizContainer = document.querySelector('.quiz-container');
   quizContainer.style.filter = 'blur(5px)';
-
   const overlay = document.createElement('div');
   overlay.id = 'result-overlay';
   overlay.style.position = 'fixed';
@@ -114,31 +107,26 @@ function showResultOverlay() {
         <button id="retry-btn" style="padding: 0.7rem 1.5rem; background: #3f51b5; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Retry</button>
         <button id="home-btn" style="padding: 0.7rem 1.5rem; background: #f44336; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Home</button>
       </div>
-    </div>
-  `;
-
+    </div>`;
   document.body.appendChild(overlay);
 
-   document.getElementById('retry-btn').addEventListener('click', () => {
+  document.getElementById('retry-btn').addEventListener('click', () => {
     document.body.removeChild(overlay);
     quizContainer.style.filter = 'none';
     currentQuestion = 0;
     score = 0;
     showQuestion();
   });
-
   document.getElementById('home-btn').addEventListener('click', () => {
-    window.location.href = 'index.html'; 
+    window.location.href = 'index.html';
   });
 }
-
-
 
 function goToNextQuestion() {
   currentQuestion++;
   if (currentQuestion < questions.length) {
     showQuestion();
   } else {
-        showResultOverlay();
+    showResultOverlay();
   }
 }
