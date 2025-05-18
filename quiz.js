@@ -1,77 +1,3 @@
-// let questions = [];
-// let currentQuestionIndex = 0;
-// let score = 0;
-// let timer;
-// let timeLeft = 10;
-
-// const questionEl = document.getElementById("question");
-// const optionsEl = document.getElementById("options");
-// const nextBtn = document.getElementById("next-btn");
-// const timeLeftEl = document.getElementById("time-left");
-
-// window.onload = async function () {
-//   const topic = localStorage.getItem("selectedTopic") || "html";
-//   const res = await fetch(`data/${topic}.json`);
-//   questions = await res.json();
-
-//   loadQuestion();
-// };
-
-// function loadQuestion() {
-//   clearInterval(timer);
-//   timeLeft = 10;
-//   timeLeftEl.textContent = timeLeft;
-//   const q = questions[currentQuestionIndex];
-
-//   questionEl.textContent = `Q${currentQuestionIndex + 1}: ${q.question}`;
-//   optionsEl.innerHTML = "";
-
-//   q.options.forEach((opt, i) => {
-//     const div = document.createElement("div");
-//     div.classList.add("option");
-//     div.textContent = opt;
-//     div.onclick = () => selectOption(div, i);
-//     optionsEl.appendChild(div);
-//   });
-
-//   nextBtn.disabled = true;
-
-//   timer = setInterval(() => {
-//     timeLeft--;
-//     timeLeftEl.textContent = timeLeft;
-
-//     if (timeLeft <= 0) {
-//       clearInterval(timer);
-//       goNext();
-//     }
-//   }, 1000);
-// }
-
-// function selectOption(selectedDiv, index) {
-//   clearInterval(timer);
-//   const allOptions = document.querySelectorAll(".option");
-//   allOptions.forEach(opt => opt.classList.remove("selected"));
-//   selectedDiv.classList.add("selected");
-
-//   const correct = questions[currentQuestionIndex].answer;
-//   if (index === correct) score++;
-
-//   nextBtn.disabled = false;
-// }
-
-// function goNext() {
-//   currentQuestionIndex++;
-//   if (currentQuestionIndex < questions.length) {
-//     loadQuestion();
-//   } else {
-//     localStorage.setItem("finalScore", score);
-//     window.location.href = "result.html"; // create this later
-//   }
-// }
-
-// nextBtn.onclick = goNext;
-
-
 let questions = [];
 let currentQuestion = 0;
 let score = 0;
@@ -100,12 +26,27 @@ function showQuestion() {
   questionText.textContent = `Q${currentQuestion + 1}. ${q.question}`;
   optionsList.innerHTML = "";
 
-  q.options.forEach(option => {
-    const li = document.createElement("li");
-    li.textContent = option;
-    li.addEventListener("click", () => selectOption(li, option, q.answer));
-    optionsList.appendChild(li);
+q.options.forEach((option, index) => {
+  const li = document.createElement("li");
+  li.classList.add("option-item");
+
+  li.innerHTML = `
+    <label class="option-label">
+      <input type="radio" name="option" value="${index}">
+      <span>${option}</span>
+    </label>
+  `;
+
+  const input = li.querySelector("input");
+  input.addEventListener("change", () => {
+    selectOption(li, index, q.answer);
   });
+
+  optionsList.appendChild(li);
+});
+
+
+
 
   updateTimer();
   timer = setInterval(() => {
@@ -122,15 +63,16 @@ function updateTimer() {
   timerDisplay.textContent = `Time left: ${timeLeft}s`;
 }
 
-function selectOption(selectedLi, selected, correct) {
+function selectOption(selectedLi, selectedIndex, correctIndex) {
   [...optionsList.children].forEach(li => li.classList.remove("selected"));
   selectedLi.classList.add("selected");
   nextBtn.disabled = false;
 
-  if (selected === correct) {
+  if (selectedIndex === correctIndex) {
     score++;
   }
 }
+
 
 nextBtn.addEventListener("click", () => {
   clearInterval(timer);
@@ -142,8 +84,7 @@ function goToNextQuestion() {
   if (currentQuestion < questions.length) {
     showQuestion();
   } else {
-    // TODO: Show result screen
-    localStorage.setItem("score", score);
+        localStorage.setItem("score", score);
     window.location.href = "result.html";
   }
 }
