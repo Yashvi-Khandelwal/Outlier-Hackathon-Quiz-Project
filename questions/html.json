@@ -1,0 +1,52 @@
+[
+  {
+    "question": "What does HTML stand for?",
+    "options": ["Hyperlinks and Text Markup Language", "Hyper Text Markup Language", "Home Tool Markup Language", "Hyper Tool Multi Language"],
+    "answer": 1
+  },
+  {
+    "question": "Which HTML tag is used to define an internal style sheet?",
+    "options": ["<style>", "<script>", "<css>", "<link>"],
+    "answer": 0
+  },
+  {
+    "question": "What tag is used to display an image in HTML?",
+    "options": ["<img>", "<src>", "<image>", "<pic>"],
+    "answer": 0
+  },
+  {
+    "question": "Which tag creates a line break?",
+    "options": ["<br>", "<lb>", "<break>", "<b>"],
+    "answer": 0
+  },
+  {
+    "question": "What does <a> tag do?",
+    "options": ["Adds audio", "Links to another page", "Adds animation", "Applies alignment"],
+    "answer": 1
+  },
+  {
+    "question": "Which tag defines a table row?",
+    "options": ["<td>", "<tr>", "<th>", "<table>"],
+    "answer": 1
+  },
+  {
+    "question": "Which attribute specifies the link destination?",
+    "options": ["href", "src", "target", "link"],
+    "answer": 0
+  },
+  {
+    "question": "HTML is a:",
+    "options": ["Programming language", "Database", "Markup language", "Scripting language"],
+    "answer": 2
+  },
+  {
+    "question": "What is the correct tag for the largest heading?",
+    "options": ["<heading>", "<h6>", "<h1>", "<head>"],
+    "answer": 2
+  },
+  {
+    "question": "Which tag is used to create a list item?",
+    "options": ["<ul>", "<li>", "<ol>", "<list>"],
+    "answer": 1
+  }
+]

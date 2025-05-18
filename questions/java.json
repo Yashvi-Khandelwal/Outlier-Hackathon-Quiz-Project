@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Who invented Java?",
+    "options": ["Dennis Ritchie", "James Gosling", "Guido van Rossum", "Bjarne Stroustrup"],
+    "answer": 1
+  },
+  {
+    "question": "Java is:",
+    "options": ["Compiled", "Interpreted", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "question": "What is the size of int in Java?",
+    "options": ["2 bytes", "4 bytes", "8 bytes", "Depends on OS"],
+    "answer": 1
+  },
+  {
+    "question": "Which keyword is used to inherit a class?",
+    "options": ["this", "super", "extends", "implements"],
+    "answer": 2
+  },
+  {
+    "question": "Which of these is not a Java feature?",
+    "options": ["Object-Oriented", "Portable", "Dynamic", "Pointer Support"],
+    "answer": 3
+  },
+  {
+    "question": "Which method starts Java program execution?",
+    "options": ["init()", "main()", "start()", "run()"],
+    "answer": 1
+  },
+  {
+    "question": "Which operator is used for comparison?",
+    "options": ["=", "==", "===", "<>"],
+    "answer": 1
+  },
+  {
+    "question": "Java source files have the extension:",
+    "options": [".class", ".java", ".jav", ".js"],
+    "answer": 1
+  },
+  {
+    "question": "Which is not a primitive data type in Java?",
+    "options": ["int", "boolean", "String", "char"],
+    "answer": 2
+  },
+  {
+    "question": "Which access specifier makes members accessible to all classes?",
+    "options": ["private", "protected", "default", "public"],
+    "answer": 3
+  }
+]

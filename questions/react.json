@@ -1,0 +1,52 @@
+[
+  {
+    "question": "React is a ___ library.",
+    "options": ["Backend", "UI", "Database", "Testing"],
+    "answer": 1
+  },
+  {
+    "question": "Who developed React?",
+    "options": ["Google", "Twitter", "Facebook", "Microsoft"],
+    "answer": 2
+  },
+  {
+    "question": "JSX stands for:",
+    "options": ["Java Syntax Extension", "JavaScript XML", "JSON XML", "JavaScript eXtension"],
+    "answer": 1
+  },
+  {
+    "question": "What hook is used for state management?",
+    "options": ["useEffect", "useState", "useReducer", "useMemo"],
+    "answer": 1
+  },
+  {
+    "question": "Which function renders components?",
+    "options": ["React.mount()", "React.render()", "ReactDOM.render()", "ReactDOM.mount()"],
+    "answer": 2
+  },
+  {
+    "question": "Props are:",
+    "options": ["Mutable", "Immutable", "Private", "Optional"],
+    "answer": 1
+  },
+  {
+    "question": "Which hook is used to perform side-effects?",
+    "options": ["useEffect", "useState", "useContext", "useRef"],
+    "answer": 0
+  },
+  {
+    "question": "Which file contains component code?",
+    "options": [".html", ".css", ".jsx", ".json"],
+    "answer": 2
+  },
+  {
+    "question": "Which React method is used to create component class?",
+    "options": ["React.create()", "React.createClass()", "React.component()", "Component.create()"],
+    "answer": 1
+  },
+  {
+    "question": "Which command creates a new React app?",
+    "options": ["npx create-react-app", "react-new", "npm react-init", "ng new react"],
+    "answer": 0
+  }
+]

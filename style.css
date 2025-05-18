@@ -90,3 +90,53 @@ body {
   cursor: pointer;
   width: 100%;
 }
+
+
+.quiz-container {
+  max-width: 600px;
+  background: white;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.option {
+  background: #f4f4f4;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.option:hover {
+  background: #dfe6fd;
+}
+
+.option.selected {
+  background: #a3c9f9;
+  font-weight: bold;
+}
+
+.next-btn {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

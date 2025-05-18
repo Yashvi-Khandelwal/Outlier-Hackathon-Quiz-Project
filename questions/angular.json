@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Angular is developed by:",
+    "options": ["Facebook", "Microsoft", "Google", "Oracle"],
+    "answer": 2
+  },
+  {
+    "question": "Which directive is used for conditional rendering?",
+    "options": ["*ngIf", "*ngFor", "*ngSwitch", "*ngModel"],
+    "answer": 0
+  },
+  {
+    "question": "What is used to create components?",
+    "options": ["@Component", "@Module", "@Directive", "@Injectable"],
+    "answer": 0
+  },
+  {
+    "question": "Which file is the root module?",
+    "options": ["main.ts", "app.module.ts", "index.html", "package.json"],
+    "answer": 1
+  },
+  {
+    "question": "Which command generates a component?",
+    "options": ["ng add", "ng serve", "ng g c", "ng build"],
+    "answer": 2
+  },
+  {
+    "question": "Which lifecycle hook is called after component is created?",
+    "options": ["ngOnInit", "ngAfterViewInit", "constructor", "ngDoCheck"],
+    "answer": 0
+  },
+  {
+    "question": "Which directive is used for looping?",
+    "options": ["*ngLoop", "*ngFor", "*ngRepeat", "*ngEach"],
+    "answer": 1
+  },
+  {
+    "question": "Angular uses ___ for two-way binding:",
+    "options": ["()", "[]", "[()]", "{}"],
+    "answer": 2
+  },
+  {
+    "question": "Which Angular file defines routing?",
+    "options": ["app.routes.ts", "app-routing.module.ts", "main.ts", "angular.json"],
+    "answer": 1
+  },
+  {
+    "question": "Which module is required for form controls?",
+    "options": ["HttpClientModule", "FormsModule", "RouterModule", "BrowserModule"],
+    "answer": 1
+  }
+]
